@@ -1,5 +1,13 @@
 <template>
- <v-data-table :headers="headers" :items="items" :caption="caption" @click:row="select" hide-default-footer disable-pagination/>
+ <v-data-table :headers="headers" :items="items" :caption="caption" hide-default-footer disable-pagination>
+       <template v-slot:item="{ item }">
+        <tr @click="select(item.videoId)">
+            <td>{{item.rank}}</td>
+            <td>{{item.title}}</td>
+            <td>{{item.singer}}</td>
+        </tr>
+    </template>
+ </v-data-table>
 </template>
 
 <script>
@@ -9,7 +17,6 @@ export default {
     name: "Table",
     data() {
         return {
-            // selected: null,
             caption: "",
             items: [],
             headers: [
@@ -31,8 +38,8 @@ export default {
         })
     },
     methods: {
-        select() {
-            EventBus.$emit("play", true)
+        select(videoId) {
+            EventBus.$emit("song", {videoId: videoId, playing: true})
         }
     }
 }

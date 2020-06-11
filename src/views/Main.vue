@@ -2,7 +2,7 @@
   <v-container>
       <v-row>
         <Navigation :items="items" />
-        <component :is="play ? 'Youtube' : 'Table'"></component>
+        <component :is="playing ? 'Youtube' : 'Table'"></component>
     </v-row>
   </v-container>
 </template>
@@ -26,11 +26,11 @@ export default {
                 {code: "INGI", title: "인기차트", icon: "mdi-chart"},
                 {code: "BAL", title: "발라드", icon: "mdi-chart"}
             ],
-            play: false
+            playing: false
         }
     },
     created() {
-        EventBus.$on("play", play => this.play = play)
+        EventBus.$on("song", ({playing}) => this.playing = playing)
     },
 }
 </script>
