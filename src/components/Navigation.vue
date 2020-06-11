@@ -25,18 +25,40 @@ export default {
     },
     methods: {
         getList(code) {
-            alert(code)
-            // EventBus.setStatus("list", [{rank: 1, title: "snowman", icon: "AGJSH123BS"},
-            //     {rank: 2, title: "아로하", youtube: "KU23LN2H34"}])
-            
-            if(code === "BAL") {
-                EventBus.$emit("list", [{rank: 1, title: "snowman", icon: "AGJSH123BS"},
-                    {rank: 2, title: "아로하", youtube: "KU23LN2H34"}])
-
-            } else if(code == "INGI") {
-                 EventBus.$emit("list", [{rank: 1, title: "비행기", icon: "AGJSH123BS"},
-                    {rank: 2, title: "곰세마리", youtube: "KU23LN2H34"}])
-            }
+            EventBus.$emit("play", false)
+            EventBus.$emit("chart", {category: "인기 차트", items: [
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 2, title: "곰세마리", singer: "소라", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},{rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},{rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},{rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+                {rank: 1, title: "비행기", singer: "수현", youtube: code},
+            ]})
         }
     }
 }
