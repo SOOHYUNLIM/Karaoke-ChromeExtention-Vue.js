@@ -1,19 +1,19 @@
 <template>
-  <HelloWorld />
+  <Main />
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
+import Main from "@/views/Main"
 
 export default {
   name: 'App',
-  components: { HelloWorld }
+  components: { Main }
 }
 </script>
 
 <style>
 html {
-  width: 400px;
-  height: 400px;
+  width: 800px;
+  height: 580px;
 }
 </style>
