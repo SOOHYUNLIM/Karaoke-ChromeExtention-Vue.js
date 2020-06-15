@@ -16,7 +16,7 @@ export default {
     }
   },
   created() {
-    EventBus.$on("song", song => alert(song))
+    EventBus.$on("song", ({videoId}) => this.videoId = videoId)
   }
 }
 </script>
