@@ -26,13 +26,13 @@ export default {
     },
     methods: {
         getList(code) {
-            let chart = {category: "DANCE", items: null}
+            // let chart = {category: "DANCE", items: null}
 
-            chart.items = AxiosUtil.get("https://tv3czyoqsh.execute-api.ap-northeast-2.amazonaws.com/karaoke/getchart/DANCE")
-            console.log(chart);
-            
+            // chart.items = AxiosUtil.get("https://tv3czyoqsh.execute-api.ap-northeast-2.amazonaws.com/karaoke/getchart/DANCE")
+            // console.log(chart);
+            AxiosUtil.get("https://tv3czyoqsh.execute-api.ap-northeast-2.amazonaws.com/karaoke/getchart/DANCE").then(data=>EventBus.$emit("chart", {category: "DANCE", items: data}))
             EventBus.$emit("song", {youtube: "", playing: false})
-            EventBus.$emit("chart", chart)
+            // EventBus.$emit("chart", chart)
         }
     }
 }
