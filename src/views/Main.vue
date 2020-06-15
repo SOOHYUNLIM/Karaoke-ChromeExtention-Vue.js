@@ -23,8 +23,17 @@ export default {
     data() {
         return {
             items: [
-                {code: "INGI", title: "인기차트", icon: "mdi-chart"},
-                {code: "BAL", title: "발라드", icon: "mdi-chart"}
+                {code: "DANCE", title: "인기차트", icon: "mdi-chart"},
+                {code: "BALLADE", title: "발라드", icon: "mdi-chart"},
+              {code: "DANCE", title: "댄스", icon: "mdi-chart"},
+              {code: "RANDB", title: "R&B", icon: "mdi-chart"},
+              {code: "HIPHOP", title: "힙합", icon: "mdi-chart"},
+              {code: "ROCK", title: "락", icon: "mdi-chart"},
+              {code: "TROT", title: "트로트", icon: "mdi-chart"},
+              {code: "POP", title: "팝송", icon: "mdi-chart"},
+              {code: "JPOP", title: "일본곡", icon: "mdi-chart"},
+              {code: "MEDLEY", title: "메들리", icon: "mdi-chart"},
+              {code: "CATOON", title: "동요&만화", icon: "mdi-chart"}
             ],
             playing: false
         }
