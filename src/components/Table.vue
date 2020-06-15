@@ -1,7 +1,7 @@
 <template>
  <v-data-table :headers="headers" :items="items" :caption="caption" hide-default-footer disable-pagination>
        <template v-slot:item="{ item }">
-        <tr @click="select(item.videoId)">
+        <tr @click="select(item.youtube)">
             <td>{{item.rank}}</td>
             <td>{{item.title}}</td>
             <td>{{item.singer}}</td>
@@ -38,8 +38,8 @@ export default {
         })
     },
     methods: {
-        select(videoId) {
-            EventBus.$emit("song", {videoId: videoId, playing: true})
+        select(youtube) {
+            EventBus.$emit("song", {youtube: youtube, playing: true})
         }
     }
 }

@@ -1,7 +1,7 @@
 <template>
   <div>
       <h1>YoutubePage</h1>
-      <p>{{videoId}}</p>
+      <p>{{youtube}}</p>
   </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
   name: "Youtube",
   data() {
     return {
-      videoId: ""
+      youtube: ""
     }
   },
   created() {

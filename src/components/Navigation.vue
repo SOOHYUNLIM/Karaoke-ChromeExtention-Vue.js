@@ -15,6 +15,7 @@
 
 <script>
 import EventBus from "../util/EventBus"
+import AxiosUtil from "../util/AxiosUtil"
 
 export default {
     name: "Navigation",
@@ -25,11 +26,13 @@ export default {
     },
     methods: {
         getList(code) {
-            EventBus.$emit("song", {videoId: "", playing: false})
-            EventBus.$emit("chart", {category: "인기 차트", items: [
-                {rank: 1, title: "비행기", singer: "수현", videoId: code},
-                {rank: 2, title: "곰세마리", singer: "소라", videoId: code}
-            ]})
+            // let chart = {category: "DANCE", items: null}
+
+            // chart.items = AxiosUtil.get("https://tv3czyoqsh.execute-api.ap-northeast-2.amazonaws.com/karaoke/getchart/DANCE")
+            // console.log(chart);
+            AxiosUtil.get("https://tv3czyoqsh.execute-api.ap-northeast-2.amazonaws.com/karaoke/getchart/DANCE").then(data=>EventBus.$emit("chart", {category: "DANCE", items: data}))
+            EventBus.$emit("song", {youtube: "", playing: false})
+            // EventBus.$emit("chart", chart)
         }
     }
 }
